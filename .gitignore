@@ -49,3 +49,5 @@
 
 /spec/dummy/log/*
 !/spec/dummy/log/.keep
+
+/spec/dummy/tmp/local_secret.txt
