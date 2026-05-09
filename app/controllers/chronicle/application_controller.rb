@@ -1,7 +1,5 @@
 module Chronicle
   class ApplicationController < ActionController::API
-    before_action :authenticate!
-
     rescue_from BaseError do |e|
       render json: { error: e.message }, status: e.status_code
     end
@@ -11,13 +9,6 @@ module Chronicle
     end
 
     private
-
-    def authenticate!
-      expected = Chronicle.config.api_token
-      return if expected.present? && expected == request.headers['X-API-TOKEN']
-
-      raise ForbiddenError, 'Request is unauthorized'
-    end
 
     def authenticate_admin_user!
       auth_token = request.headers['X-Admin-Auth-Token']

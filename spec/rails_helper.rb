@@ -18,7 +18,8 @@ Dir[File.expand_path('support/**/*.rb', __dir__)].each { |f| require f }
 # maintain_test_schema! only sees the dummy app's db/migrate (empty); the engine's
 # migrations are discovered separately, so we migrate the engine path explicitly.
 engine_migrations = Chronicle::Engine.root.join('db/migrate').to_s
-ActiveRecord::MigrationContext.new([engine_migrations]).migrate
+dummy_migrations  = File.expand_path('dummy/db/migrate', __dir__)
+ActiveRecord::MigrationContext.new([engine_migrations, dummy_migrations]).migrate
 
 RSpec.configure do |config|
   config.use_transactional_fixtures = false

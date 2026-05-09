@@ -6,6 +6,7 @@ RSpec.configure do |config|
       c.api_token        = 'test_api_token'
       c.project_name     = 'test_project'
       c.insert_middleware = false
+      c.user_class = User
     end
   end
 end

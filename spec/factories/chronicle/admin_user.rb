@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :chronicle_admin_user, class: 'Chronicle::AdminUser' do
+  factory :admin_user, class: 'Chronicle::AdminUser' do
     email      { Faker::Internet.unique.email }
     password   { 'password123' }
     auth_token { SecureRandom.hex(16) }
