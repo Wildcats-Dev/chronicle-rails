@@ -1,0 +1,212 @@
+plugins:
+  - rubocop-performance
+  - rubocop-rails
+
+AllCops:
+  Exclude:
+    - 'bin/**/*'
+    - 'spec/helpers/*'
+    - 'script/**/*'
+    - 'test/**/*'
+    - 'tmp/**/*'
+    - 'lib/**/*.rake'
+    - 'vendor/**/*'
+  TargetRubyVersion: 3.4
+  NewCops: enable
+  SuggestExtensions: false
+
+Layout:
+  Exclude:
+    - 'db/**/*'
+
+Layout/ExtraSpacing:
+  AllowBeforeTrailingComments: true
+
+# https://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Layout/FirstArrayElementIndentation
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+
+# https://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Layout/FirstHashElementIndentation
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
+
+Layout/EmptyLineAfterGuardClause:
+  Enabled: false
+
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: false
+
+# This is ok: 'scope :for_accounts, ->(ids: nil, index_hint: nil, consider_strong_privacy_accounts: true)'
+Lint/AmbiguousBlockAssociation:
+  Enabled: false
+
+Lint/AssignmentInCondition:
+  AllowSafeAssignment: false
+
+Lint/EmptyClass:
+  AllowComments: true
+
+# TODO: want to enable
+Metrics/AbcSize:
+  Enabled: false
+
+# Mixins are inherently nested
+Metrics/BlockLength:
+  AllowedMethods:
+    - prepended
+    - class_methods
+    - included
+  Exclude:
+    - 'db/*.rb'
+    - 'config/routes.rb'
+    - 'config/environments/*.rb'
+    - 'spec/**/*.rb'
+
+# 'Avoid classes longer than 100 lines of code.'
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+# TODO: want to enable
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Enabled: false
+
+Metrics/ParameterLists:
+  CountKeywordArgs: false
+
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+Naming/BlockForwarding:
+  EnforcedStyle: explicit
+
+# https://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Naming/BlockParameterName
+Naming/BlockParameterName:
+  AllowedNames:
+    - supportID
+    - employeeID
+
+Rails/RedundantPresenceValidationOnBelongsTo:
+  Enabled: false
+
+Rails/UnknownEnv:
+  Environments:
+    - development
+    - test
+    - production
+
+Rails/SkipsModelValidations:
+  Exclude:
+    - spec/**/*.rb
+
+Style:
+  Exclude:
+    - 'db/**/*'
+
+
+# Do allow non-ASCII characters in comments.
+Style/AsciiComments:
+  Enabled: false
+
+Style/CollectionMethods:
+  # Mapping from undesired method to desired_method
+  # e.g. to use `detect` over `find`:
+  #
+  # CollectionMethods:
+  #   PreferredMethods:
+  #     find: detect
+  PreferredMethods:
+    collect: 'map'
+    collect!: 'map!'
+    inject: 'reduce'
+    detect: 'detect'
+    find: 'detect'
+    find_all: 'select'
+
+# 'Document classes and non-namespace modules.'
+Style/Documentation:
+  Enabled: false
+
+# https://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Style/EmptyElse
+Style/EmptyElse:
+  EnforcedStyle: empty
+
+# 'Add the frozen_string_literal comment to the top of files to help transition from Ruby 2.3.0 to Ruby 3.0.'
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: never
+
+Style/HashSyntax:
+  EnforcedShorthandSyntax: never
+
+# Prefer lambda literal syntax '->()' for both single and multiline lambdas
+Style/Lambda:
+  EnforcedStyle: literal
+
+# Avoid using numbered parameters
+Style/NumberedParameters:
+  EnforcedStyle: disallow
+
+# Prefer 'x > 0' over 'x.positive?' and 'x == 0' over 'x.zero?'
+Style/NumericPredicate:
+  EnforcedStyle: comparison
+
+# 'Don't use self where it's not needed.'
+Style/RedundantSelf:
+  Enabled: false
+
+Style/SafeNavigation:
+  # Do not register an offense for method chains exceeding length of 1.
+  MaxChainLength: 1
+
+Style/StringLiterals:
+  # Valid values are: single_quotes, double_quotes
+  EnforcedStyle: single_quotes
+
+Style/SymbolArray:
+  EnforcedStyle: brackets
+
+Style/TrailingCommaInArguments:
+  Enabled: false
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/ReturnNilInPredicateMethodDefinition:
+  Exclude:
+    - '**/*.rb'
+
+# Specs have some characteristics that are OK
+Lint/EmptyBlock:
+  Exclude:
+    - 'spec/**/*.rb'
+
+Lint/ConstantDefinitionInBlock:
+  Exclude:
+    - 'spec/**/*.rb'
+
+Style/FormatStringToken:
+  Mode: conservative
+
+Rails/I18nLocaleTexts:
+  Enabled: false
+
+Rails/InverseOf:
+  Enabled: false
+
+Naming/AccessorMethodName:
+  Enabled: false
+
+Naming/VariableNumber:
+  Enabled: false
+
+Style/MixinUsage:
+  Exclude:
+    - 'spec/**/*'
