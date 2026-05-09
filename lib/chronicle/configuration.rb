@@ -12,8 +12,7 @@ module Chronicle
                   :skip_paths,
                   :skip_api_log_proc,
                   :disable_api_logging,
-                  :disable_error_logging,
-                  :insert_middleware
+                  :disable_error_logging
 
     def initialize
       @user_class             = nil
@@ -29,7 +28,6 @@ module Chronicle
       @skip_api_log_proc      = nil
       @disable_api_logging    = false
       @disable_error_logging  = false
-      @insert_middleware      = true
     end
 
     def user_model

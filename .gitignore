@@ -46,3 +46,6 @@
 /config/credentials
 
 .DS_STORE
+
+/spec/dummy/log/*
+!/spec/dummy/log/.keep
