@@ -1,15 +1,22 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  host: <%= ENV.fetch("CHRONICLE_DB_HOST", "localhost") %>
-  username: <%= ENV.fetch("CHRONICLE_DB_USERNAME", "postgres") %>
-  password: <%= ENV.fetch("CHRONICLE_DB_PASSWORD", "mypassword") %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS", 5) %>
+  port: <%= ENV.fetch('DB_PORT', 5432) %>
+  host: <%= ENV.fetch('DB_HOST', 'localhost') %>
+  username: <%= ENV.fetch('POSTGRES_USER', 'postgres') %>
+  password: <%= ENV.fetch('POSTGRES_PASSWORD', 'mypassword') %>
 
 development:
   <<: *default
-  database: chronicle_dummy_development
+  database: chronicle_gem_dev
 
 test:
   <<: *default
-  database: chronicle_dummy_test
+  database: chronicle_gem_test<%= ENV['TEST_ENV_NUMBER'] %>
+
+production:
+  <<: *default
+  database: <%= ENV.fetch('POSTGRES_DB', 'chronicle_gem_prod') %>
+  sslmode: require
+  prepared_statements: false

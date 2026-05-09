@@ -8,13 +8,17 @@ require 'rspec/rails'
 require 'factory_bot_rails'
 require 'database_cleaner/active_record'
 
-Rails.root.glob('spec/support/**/*.rb').sort_by(&:to_s).each { |f| require f }
+# factory_bot_rails defaults to the dummy app root for engines; point it at the engine's own factories.
+FactoryBot.definition_file_paths = [File.expand_path('factories', __dir__)]
+FactoryBot.find_definitions
+# Rails.root points to spec/dummy in engine specs; use __dir__ to load from the engine's spec/support.
+Dir[File.expand_path('support/**/*.rb', __dir__)].each { |f| require f }
 
-begin
-  ActiveRecord::Migration.maintain_test_schema!
-rescue ActiveRecord::PendingMigrationError => e
-  abort e.to_s.strip
-end
+# Run any pending engine migrations automatically rather than aborting.
+# maintain_test_schema! only sees the dummy app's db/migrate (empty); the engine's
+# migrations are discovered separately, so we migrate the engine path explicitly.
+engine_migrations = Chronicle::Engine.root.join('db/migrate').to_s
+ActiveRecord::MigrationContext.new([engine_migrations]).migrate
 
 RSpec.configure do |config|
   config.use_transactional_fixtures = false
@@ -25,7 +29,7 @@ RSpec.configure do |config|
 
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
-    DatabaseCleaner.clean_with(:truncation)
+    DatabaseCleaner.clean_with(:truncation, except: %w[schema_migrations ar_internal_metadata])
   end
 
   config.around(:each) do |example|

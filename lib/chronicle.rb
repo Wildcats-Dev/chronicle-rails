@@ -1,5 +1,6 @@
 require 'chronicle/version'
 require 'chronicle/configuration'
+require 'chronicle/util'
 require 'chronicle/engine'
 
 module Chronicle

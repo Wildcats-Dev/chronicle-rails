@@ -1,2 +1,93 @@
 Generating image variants require the image_processing gem. Please add `gem "image_processing", "~> 1.2"` to your Gemfile or set `config.active_storage.variant_processor = :disabled`.
 Generating image variants require the image_processing gem. Please add `gem "image_processing", "~> 1.2"` to your Gemfile or set `config.active_storage.variant_processor = :disabled`.
+Generating image variants require the image_processing gem. Please add `gem "image_processing", "~> 1.2"` to your Gemfile or set `config.active_storage.variant_processor = :disabled`.
+Generating image variants require the image_processing gem. Please add `gem "image_processing", "~> 1.2"` to your Gemfile or set `config.active_storage.variant_processor = :disabled`.
+Generating image variants require the image_processing gem. Please add `gem "image_processing", "~> 1.2"` to your Gemfile or set `config.active_storage.variant_processor = :disabled`.
+Generating image variants require the image_processing gem. Please add `gem "image_processing", "~> 1.2"` to your Gemfile or set `config.active_storage.variant_processor = :disabled`.
+Generating image variants require the image_processing gem. Please add `gem "image_processing", "~> 1.2"` to your Gemfile or set `config.active_storage.variant_processor = :disabled`.
+Generating image variants require the image_processing gem. Please add `gem "image_processing", "~> 1.2"` to your Gemfile or set `config.active_storage.variant_processor = :disabled`.
+  [1m[35m (48.5ms)[0m  [1m[34mSELECT version FROM schema_migrations ORDER BY version /*application='Dummy'*/[0m
+Generating image variants require the image_processing gem. Please add `gem "image_processing", "~> 1.2"` to your Gemfile or set `config.active_storage.variant_processor = :disabled`.
+Generating image variants require the image_processing gem. Please add `gem "image_processing", "~> 1.2"` to your Gemfile or set `config.active_storage.variant_processor = :disabled`.
+Generating image variants require the image_processing gem. Please add `gem "image_processing", "~> 1.2"` to your Gemfile or set `config.active_storage.variant_processor = :disabled`.
+  [1m[36mChronicle::AdminUser Count (57.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "chronicle_admin_users" /*application='Dummy'*/[0m
+Generating image variants require the image_processing gem. Please add `gem "image_processing", "~> 1.2"` to your Gemfile or set `config.active_storage.variant_processor = :disabled`.
+  [1m[35mSQL (0.5ms)[0m  [1m[35mSET search_path TO public /*application='Dummy'*/[0m
+  [1m[35m (358.7ms)[0m  [1m[35mCREATE DATABASE "chronicle_gem_dev" ENCODING = 'unicode' /*application='Dummy'*/[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mSET search_path TO public /*application='Dummy'*/[0m
+  [1m[35m (20.2ms)[0m  [1m[35mCREATE DATABASE "chronicle_gem_test" ENCODING = 'unicode' /*application='Dummy'*/[0m
+Generating image variants require the image_processing gem. Please add `gem "image_processing", "~> 1.2"` to your Gemfile or set `config.active_storage.variant_processor = :disabled`.
+  [1m[36mChronicle::AdminUser Count (71.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "chronicle_admin_users" /*application='Dummy'*/[0m
+Generating image variants require the image_processing gem. Please add `gem "image_processing", "~> 1.2"` to your Gemfile or set `config.active_storage.variant_processor = :disabled`.
+  [1m[35mSQL (0.7ms)[0m  [1m[35mSET search_path TO public /*application='Dummy'*/[0m
+  [1m[35m (73.4ms)[0m  [1m[35mCREATE DATABASE "chronicle_gem_dev" ENCODING = 'unicode' /*application='Dummy'*/[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mSET search_path TO public /*application='Dummy'*/[0m
+  [1m[35m (21.2ms)[0m  [1m[35mCREATE DATABASE "chronicle_gem_test" ENCODING = 'unicode' /*application='Dummy'*/[0m
+Generating image variants require the image_processing gem. Please add `gem "image_processing", "~> 1.2"` to your Gemfile or set `config.active_storage.variant_processor = :disabled`.
+  [1m[35mSQL (1.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql" SCHEMA pg_catalog /*application='Dummy'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "chronicle_admin_users" CASCADE /*application='Dummy'*/[0m
+  [1m[35m (15.0ms)[0m  [1m[35mCREATE TABLE "chronicle_admin_users" ("id" bigserial primary key, "auth_token" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "email" character varying NOT NULL, "name" character varying NOT NULL, "password_digest" character varying NOT NULL, "role" integer DEFAULT 0 NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='Dummy'*/[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_chronicle_admin_users_on_auth_token" ON "chronicle_admin_users" ("auth_token") /*application='Dummy'*/[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_chronicle_admin_users_on_email" ON "chronicle_admin_users" ("email") /*application='Dummy'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "chronicle_api_logs" CASCADE /*application='Dummy'*/[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE "chronicle_api_logs" ("id" bigserial primary key, "api_endpoint" character varying, "backend_version" character varying, "brand" character varying, "client_version" character varying, "created_at" timestamp(6) NOT NULL, "device_id" character varying, "device_model_name" character varying, "device_os" character varying, "device_type" character varying, "frontend_response_time_ms" integer, "http_method" character varying, "http_status_code" integer, "ip_address" character varying, "meta" json, "os_version" character varying, "path_params" json, "request_id" character varying, "response_time_ms" integer, "time_zone" character varying, "timestamp" timestamp(6), "updated_at" timestamp(6) NOT NULL, "user_id" bigint) /*application='Dummy'*/[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE INDEX "index_chronicle_api_logs_on_request_id" ON "chronicle_api_logs" ("request_id") /*application='Dummy'*/[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE INDEX "index_chronicle_api_logs_on_timestamp" ON "chronicle_api_logs" ("timestamp") /*application='Dummy'*/[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_chronicle_api_logs_on_user_id" ON "chronicle_api_logs" ("user_id") /*application='Dummy'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "chronicle_api_routes" CASCADE /*application='Dummy'*/[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "chronicle_api_routes" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "first_seen_at" timestamp(6) NOT NULL, "http_method" character varying NOT NULL, "path" character varying NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='Dummy'*/[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_chronicle_api_routes_on_path_and_method" ON "chronicle_api_routes" ("path", "http_method") /*application='Dummy'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "chronicle_error_groups" CASCADE /*application='Dummy'*/[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "chronicle_error_groups" ("id" bigserial primary key, "backend_version" character varying, "cleaned_backtrace" text, "client_version" character varying, "created_at" timestamp(6) NOT NULL, "error_message" character varying NOT NULL, "fingerprint" character varying NOT NULL, "first_seen_at" timestamp(6) NOT NULL, "jira_link" character varying, "last_seen_at" timestamp(6) NOT NULL, "occurrence_count" integer DEFAULT 0 NOT NULL, "original_backtrace" text, "project" character varying NOT NULL, "source_name" character varying NOT NULL, "source_type" character varying NOT NULL, "status" character varying DEFAULT 'open' NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='Dummy'*/[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE INDEX "index_chronicle_error_groups_on_last_seen_at" ON "chronicle_error_groups" ("last_seen_at") /*application='Dummy'*/[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_chronicle_error_groups_on_project_and_fingerprint" ON "chronicle_error_groups" ("project", "fingerprint") /*application='Dummy'*/[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE INDEX "index_chronicle_error_groups_on_status" ON "chronicle_error_groups" ("status") /*application='Dummy'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "chronicle_error_logs" CASCADE /*application='Dummy'*/[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "chronicle_error_logs" ("id" bigserial primary key, "backend_version" character varying, "client_version" character varying, "context" json, "created_at" timestamp(6) NOT NULL, "error_group_id" bigint NOT NULL, "request_id" character varying, "updated_at" timestamp(6) NOT NULL, "user_id" bigint) /*application='Dummy'*/[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE INDEX "index_chronicle_error_logs_on_error_group_id" ON "chronicle_error_logs" ("error_group_id") /*application='Dummy'*/[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE INDEX "index_chronicle_error_logs_on_user_id" ON "chronicle_error_logs" ("user_id") /*application='Dummy'*/[0m
+  [1m[35m (5.4ms)[0m  [1m[35mALTER TABLE "chronicle_error_logs" ADD CONSTRAINT "fk_rails_7ccac8f8f1"
+FOREIGN KEY ("error_group_id")
+  REFERENCES "chronicle_error_groups" ("id")
+ /*application='Dummy'*/[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY) /*application='Dummy'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Dummy'*/[0m
+  [1m[35m (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20260101000005) /*application='Dummy'*/[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20260101000004),
+(20260101000003),
+(20260101000002),
+(20260101000001); /*application='Dummy'*/[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='Dummy'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Dummy'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2026-05-09 08:50:29.984001', '2026-05-09 08:50:29.984003') RETURNING "key" /*application='Dummy'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Dummy'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'schema_sha1' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Dummy'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '18d945bdac1ff4a8fdaf52d8b175d493f3de830a', '2026-05-09 08:50:29.988454', '2026-05-09 08:50:29.988455') RETURNING "key" /*application='Dummy'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(153739479718060845) /*application='Dummy'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Dummy'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Dummy'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(153739479718060845) /*application='Dummy'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Dummy'*/[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mSET search_path TO public /*application='Dummy'*/[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mSET search_path TO "$user", public /*application='Dummy'*/[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mSET search_path TO public /*application='Dummy'*/[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mSET search_path TO "$user", public /*application='Dummy'*/[0m
+Generating image variants require the image_processing gem. Please add `gem "image_processing", "~> 1.2"` to your Gemfile or set `config.active_storage.variant_processor = :disabled`.
+  [1m[36mChronicle::ApiLog Count (75.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "chronicle_api_logs" /*application='Dummy'*/[0m
+  [1m[36mChronicle::AdminUser Count (3.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "chronicle_admin_users" /*application='Dummy'*/[0m
+Generating image variants require the image_processing gem. Please add `gem "image_processing", "~> 1.2"` to your Gemfile or set `config.active_storage.variant_processor = :disabled`.
+  [1m[35mSQL (0.3ms)[0m  [1m[35mSET search_path TO public /*application='Dummy'*/[0m
+  [1m[35m (87.4ms)[0m  [1m[35mCREATE DATABASE "chronicle_gem_dev" ENCODING = 'unicode' /*application='Dummy'*/[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mSET search_path TO public /*application='Dummy'*/[0m
+  [1m[35m (21.3ms)[0m  [1m[35mCREATE DATABASE "chronicle_gem_test" ENCODING = 'unicode' /*application='Dummy'*/[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(153739479718060845) /*application='Dummy'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Dummy'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Dummy'*/[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(153739479718060845) /*application='Dummy'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Dummy'*/[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[35mSET search_path TO public /*application='Dummy'*/[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[35mSET search_path TO "$user", public /*application='Dummy'*/[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[35mSET search_path TO public /*application='Dummy'*/[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mSET search_path TO "$user", public /*application='Dummy'*/[0m
+Generating image variants require the image_processing gem. Please add `gem "image_processing", "~> 1.2"` to your Gemfile or set `config.active_storage.variant_processor = :disabled`.
