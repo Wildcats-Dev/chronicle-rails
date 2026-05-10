@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    chronicle (0.1.0)
+    chronicle-rails (0.1.0)
       bcrypt (~> 3.1)
       rails (>= 7.1, < 9)
 
@@ -321,7 +321,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
-  chronicle!
+  chronicle-rails!
   database_cleaner-active_record
   debug
   factory_bot_rails
