@@ -28,14 +28,14 @@ module Chronicle
     # drained periodically by Chronicle::FlushApiLogsJob, and opportunistically
     # when the configured flush size is exceeded.
     def buffer_api_log(payload)
-      return if configuration.disable_api_logging
+      return if configuration.api_logging_disabled?
       ApiLogs::Buffer.append(payload)
     end
 
     # Bulk-inserts API log payloads directly, bypassing the file buffer.
     # Intended for tests, backfills, or hosts that implement their own buffering.
     def bulk_log_api(payloads)
-      return if configuration.disable_api_logging
+      return if configuration.api_logging_disabled?
       return if payloads.blank?
 
       now = Time.current
@@ -57,7 +57,7 @@ module Chronicle
     # Synchronously creates an ErrorLog. The model's before_validation hook
     # routes it through ErrorLogs::GroupResolver for fingerprint dedup.
     def log_error(payload)
-      return if configuration.disable_error_logging
+      return if configuration.error_logging_disabled?
       ErrorLog.create!(payload)
     end
 

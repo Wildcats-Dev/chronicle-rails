@@ -42,5 +42,15 @@ module Chronicle
     def resolved_backend_version
       backend_version.respond_to?(:call) ? backend_version.call : backend_version
     end
+
+    def api_logging_disabled?
+      val = disable_api_logging
+      val.respond_to?(:call) ? val.call : val
+    end
+
+    def error_logging_disabled?
+      val = disable_error_logging
+      val.respond_to?(:call) ? val.call : val
+    end
   end
 end
